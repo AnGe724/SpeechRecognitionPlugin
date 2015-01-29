@@ -41,9 +41,22 @@
 #pragma ISSpeechRecognitionDelegate
 -(void)recognition:(ISSpeechRecognition *)speechRecognition didGetRecognitionResult:(ISSpeechRecognitionResult *)result
 {
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result.text];
-    [pluginResult setKeepCallbackAsBool:YES];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:recogCommand.callbackId];
+    NSMutableDictionary * resultDict = [[NSMutableDictionary alloc]init];
+    [resultDict setValue:result.text forKey:@"transcript"];
+    [resultDict setValue:[NSNumber numberWithBool:YES] forKey:@"final"];
+    [resultDict setValue:[NSNumber numberWithFloat:result.confidence]forKey:@"confidence"];
+    NSArray * alternatives = @[resultDict];
+    NSArray * results = @[alternatives];
+    
+    NSMutableDictionary * event = [[NSMutableDictionary alloc]init];
+    [event setValue:@"result" forKey:@"type"];
+    [event setValue:nil forKey:@"emma"];
+    [event setValue:nil forKey:@"interpretation"];
+    [event setValue:results forKey:@"results"];
+    
+    self.pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:event];
+    [self.pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:self.pluginResult callbackId:self.command.callbackId];
 }
 
 @end

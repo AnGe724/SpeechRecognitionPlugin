@@ -102,24 +102,12 @@ app.initialize();
         <script type="text/javascript">
             function start()
             {
-                SpeechRecognition.start(recognizePluginResultHandler, nativePluginErrorHandler);
+                SpeechRecognition.start();
             }
         
             function stop()
             {
                 SpeechRecognition.stop();
-            }
-            
-            function recognizePluginResultHandler(result)
-            {
-                alert("Result: " + result);
-                var msg = document.getElementById("message");
-                msg.value = result;
-            }
-            
-            function nativePluginErrorHandler(result)
-            {
-                alert("error: "+result);
             }
         </script>
     </body>

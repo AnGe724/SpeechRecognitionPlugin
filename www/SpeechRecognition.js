@@ -31,11 +31,11 @@
             this.onstart = null;
             this.onend = null;
 
-            exec(function() {
+            /*exec(function() {
                 console.log("initialized");
             }, function(e) {
                 console.log("error: " + e);
-            }, "SpeechRecognition", "init", []);
+            }, "SpeechRecognition", "init", []);*/
         };
 
         SpeechRecognition.prototype.init = function(key) {
