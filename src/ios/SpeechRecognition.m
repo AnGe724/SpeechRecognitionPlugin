@@ -54,9 +54,9 @@
     [event setValue:nil forKey:@"interpretation"];
     [event setValue:results forKey:@"results"];
     
-    self.pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:event];
-    [self.pluginResult setKeepCallbackAsBool:YES];
-    [self.commandDelegate sendPluginResult:self.pluginResult callbackId:self.command.callbackId];
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:event];
+    [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:recogCommand.callbackId];
 }
 
 @end
