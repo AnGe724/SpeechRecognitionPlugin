@@ -5,7 +5,9 @@
 @interface SpeechRecognition : CDVPlugin <ISSpeechSynthesisDelegate,ISSpeechRecognitionDelegate>
 {
     ISSpeechRecognition *isSpeechRecog;
+    
     CDVInvokedUrlCommand *recogCommand;
+    CDVPluginResult *pluginResult;
 }
 
 -(void)init:(CDVInvokedUrlCommand*)command;

@@ -2,7 +2,7 @@
 //  TTSAndSpeechRecognitionPlugin.m
 //  TTSPlugin
 //
-//  Created by Admin on 30/04/13.
+//  Created by Admin on 28/01/15.
 //
 //
 
@@ -41,11 +41,9 @@
 #pragma ISSpeechRecognitionDelegate
 -(void)recognition:(ISSpeechRecognition *)speechRecognition didGetRecognitionResult:(ISSpeechRecognitionResult *)result
 {
-    if (result.confidence < 0.3) {
-        [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"no confidence"] callbackId:recogCommand.callbackId];
-    } else {
-        [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result.text] callbackId:recogCommand.callbackId];
-    }
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result.text];
+    [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:recogCommand.callbackId];
 }
 
 @end
