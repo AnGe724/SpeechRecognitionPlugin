@@ -19,17 +19,18 @@
     NSString* key = [command.arguments objectAtIndex:0];
     iSpeechSDK *sdk = [iSpeechSDK sharedSDK];
     sdk.APIKey = key;
+
+    isSpeechRecog = [[ISSpeechRecognition alloc] init];
+    [isSpeechRecog setDelegate:self];
+    [isSpeechRecog setSilenceDetectionEnabled:NO];
+    [isSpeechRecog setLocale:ISLocaleUSEnglish];
+    [isSpeechRecog setFreeformType:ISFreeFormTypeDictation];
 }
 
 -(void)start:(CDVInvokedUrlCommand*)command
 {
     recogCommand = command;
     
-    isSpeechRecog = [[ISSpeechRecognition alloc] init];
-    [isSpeechRecog setDelegate:self];
-    [isSpeechRecog setSilenceDetectionEnabled:NO];
-    [isSpeechRecog setLocale:ISLocaleUSEnglish];
-    [isSpeechRecog setFreeformType:ISFreeFormTypeDictation];
     [isSpeechRecog listen:nil];
 }
 
