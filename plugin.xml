@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-           id="org.apache.cordova.speech.speechrecognition"
-      version="0.1.0">
-    <name>SpeechRecognition</name>
+           id="com.anh724.cordova.plugin.speechrecognition"
+      version="1.0">
+    <name>SpeechRecognitionPlugin</name>
     <description>Cordova Speech Recognition Plugin</description>
     <license>Apache</license>
-    <keywords>cordova,speech,recognition</keywords>
+    <keywords>cordova, phonegap, speech, recognition, iSpeech</keywords>
 
 
     <js-module src="www/SpeechRecognition.js" name="SpeechRecognition">
