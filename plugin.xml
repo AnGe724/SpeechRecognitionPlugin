@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-           id="com.anh724.cordova.plugin.speechrecognition"
+           id="org.apache.cordova.speech.speechrecognition"
       version="1.0">
     <name>SpeechRecognitionPlugin</name>
     <description>Cordova Speech Recognition Plugin</description>

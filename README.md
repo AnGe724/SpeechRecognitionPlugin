@@ -25,7 +25,7 @@ cordova plugin add https://github.com/AnGe724/SpeechRecognitionPlugin.git && cor
 ### Removing the Plugin from your project
 Through the [Command-line Interface][CLI]:
 ```bash
-cordova plugin rm com.anh724.cordova.plugin.speechrecognition
+cordova plugin rm org.apache.cordova.speech.speechrecognition
 ```
 
 ## INCLUDED FUNTIONS ##
