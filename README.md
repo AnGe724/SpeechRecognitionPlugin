@@ -102,17 +102,17 @@ app.initialize();
         <script type="text/javascript">
             function start()
             {
-                SpeechRecognition.start(recognizePluginResultHandler,nativePluginErrorHandler);
+                SpeechRecognition.start(recognizePluginResultHandler, nativePluginErrorHandler);
             }
         
             function stop()
             {
-                SpeechRecognition.stop(recognizePluginResultHandler,nativePluginErrorHandler);
+                SpeechRecognition.stop();
             }
             
             function recognizePluginResultHandler(result)
             {
-                alert("ok " + result);
+                alert("Result: " + result);
                 var msg = document.getElementById("message");
                 msg.value = result;
             }

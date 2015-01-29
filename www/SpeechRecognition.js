@@ -1,5 +1,3 @@
-cordova.define("org.apache.cordova.speech.speechrecognition.SpeechRecognition", function(require, exports, module) {
-    
     cordova.define("cordova/plugin/SpeechRecognition", function(require, exports, module) {
                
         var exec = require("cordova/exec");
@@ -94,5 +92,3 @@ cordova.define("org.apache.cordova.speech.speechrecognition.SpeechRecognition", 
         
     var SpeechRecognition = cordova.require("cordova/plugin/SpeechRecognition");
     module.exports = SpeechRecognition;
-
-});
